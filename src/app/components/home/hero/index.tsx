@@ -18,9 +18,9 @@ export default function Hero() {
           <div className="col-span-6 flex flex-col justify-center space-y-6" data-aos="fade-right">
 
             <h1 className="md:text-[56px] text-4xl font-bold leading-[1.15] text-white">
-              Instant Insurance.
+              Instant Insurance on Whatsapp,
               <br className="hidden md:block" />
-              Powered by WhatsApp AI.
+              Powered by AI.
             </h1>
 
             <p className="text-lg text-slate-300 max-w-md leading-relaxed">
