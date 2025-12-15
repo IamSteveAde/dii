@@ -215,18 +215,7 @@ export default function PoliciesPage() {
             </p>
           </PolicySection>
 
-          {/* 8.0 CONTACT INFORMATION */}
-          <PolicySection title="8.0 Contact Information">
-            <p>
-              For enquiries or support:  
-              <strong> [Insert Support Email] </strong>
-            </p>
-
-            <p className="mt-3">
-              Business Name: Chuks AI <br />
-              Jurisdiction: Nigeria
-            </p>
-          </PolicySection>
+         
 
         </div>
       </div>
