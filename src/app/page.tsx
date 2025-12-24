@@ -13,12 +13,12 @@ export const metadata = {
   metadataBase: new URL("https://www.chuks.ai"),
 
   title: {
-    default: "Chuks AI – Your Smart WhatsApp Assistant for Property Search, Services & Insurance",
+    default: "Chuks AI | AI-Powered Insurance on WhatsApp",
     template: "%s | Chuks AI",
   },
 
   description:
-    "Chuks AI is your intelligent WhatsApp assistant for property search, real-time service automation, insurance plans, payments, and secure digital support. Fast, accurate, and trusted by users for seamless everyday tasks.",
+    "Chuks AI is an AI-powered WhatsApp insurance assistant for instant quotes, policy purchase, and support. Fast, secure, and available 24/7.",
 
   keywords: [
     "Chuks AI",
@@ -35,9 +35,9 @@ export const metadata = {
 
   openGraph: {
     title:
-      "Chuks AI – Instant Insurance on Whatsapp",
+      "Chuks AI | AI-Powered Insurance on WhatsApp",
     description:
-      "Chuks AI offers instant insurance on WhatsApp—get quotes, buy policies, file claims, and access support in seconds. Fast, simple, and available 24/7.",
+      "Chuks AI is an AI-powered WhatsApp insurance assistant for instant quotes, policy purchase, and support. Fast, secure, and available 24/7.",
     url: "https://www.chuks.ai",
     siteName: "Chuks AI",
     type: "website",
@@ -53,9 +53,9 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Chuks AI – Your Smart WhatsApp Assistant",
+    title: "Chuks AI | AI-Powered Insurance on WhatsApp",
     description:
-      "Get instant help with property search, services, insurance, payments, and more using Chuks AI on WhatsApp.",
+      "Chuks AI is an AI-powered WhatsApp insurance assistant for instant quotes, policy purchase, and support. Fast, secure, and available 24/7.",
     images: [
       "https://chuksai.netlify.app/_next/image?url=%2Fimages%2Fhero%2Fheromoby.png&w=1920&q=75",
     ],
