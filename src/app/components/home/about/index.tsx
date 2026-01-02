@@ -2,119 +2,116 @@
 
 import { motion } from "framer-motion";
 import {
-  HeartHandshake,
-  Users,
-  CalendarDays,
-  ArrowRight,
+  Briefcase,
+  Hotel,
+  Brush,
+  Wrench,
+  HardHat,
+  Warehouse,
+  ShoppingBag,
 } from "lucide-react";
 
-const actions = [
-  {
-    title: "Donate Today",
-    headline: "Support Digital Inclusion Initiative",
-    description:
-      "Your donation today could help transform someone’s life through digital access, skills, and opportunity. Together, we can fix the digital divide — for good.",
-    cta: "Donate Now",
-    href: "/donate",
-    icon: HeartHandshake,
-    accent: "#61abbb",
-  },
-  {
-    title: "Volunteer",
-    headline: "Volunteer with Digital Inclusion Initiative",
-    description:
-      "Join our team of volunteers and make a difference in your community. Whether it’s a few hours a week or a few hours a month, your time and skills matter.",
-    cta: "Become a Volunteer",
-    href: "/volunteer",
-    icon: Users,
-    accent: "#5f3b86",
-  },
-  {
-    title: "Events",
-    headline: "Attend Our Events",
-    description:
-      "We host fundraisers, community outreach programs, and educational seminars throughout the year. Stay engaged and be part of the movement.",
-    cta: "View Events",
-    href: "/events",
-    icon: CalendarDays,
-    accent: "#bcc8d7",
-  },
-];
-
-export default function SupportSection() {
+export default function WhatWeDo() {
   return (
-    <section className="relative bg-white py-32">
-      <div className="container mx-auto px-6 lg:max-w-screen-xl">
-        {/* Section Header */}
-        <div className="max-w-3xl mb-20">
-          <span className="block text-[11px] tracking-[0.45em] uppercase text-black/40 mb-4">
-            Get Involved
-          </span>
-          <h2 className="text-4xl md:text-5xl font-light leading-tight text-black">
-            Support Digital Inclusion Initiative Today
-          </h2>
-          <p className="mt-6 text-black/60 max-w-xl leading-relaxed">
-            Do a good thing today. Your support helps expand access, build skills,
-            and unlock opportunities through digital inclusion.
-          </p>
-        </div>
+    <section className="relative bg-white overflow-hidden" id="about">
+      {/* AI LINEAR GRID BACKGROUND */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(0,0,0,0.04) 1px, transparent 1px)
+            `,
+            backgroundSize: "80px 80px",
+          }}
+        />
+        <div className="absolute top-0 left-1/3 h-full w-[1px] bg-gradient-to-b from-transparent via-[#5f3b86]/20 to-transparent" />
+        <div className="absolute top-0 left-2/3 h-full w-[1px] bg-gradient-to-b from-transparent via-[#61abbb]/20 to-transparent" />
+      </div>
 
-        {/* Action Cards */}
-        <div className="grid gap-10 md:grid-cols-3">
-          {actions.map((item, index) => {
-            const Icon = item.icon;
+      <div className="relative z-10 py-32">
+        <div className="container mx-auto px-6 lg:max-w-screen-xl">
+          <div className="grid lg:grid-cols-12 gap-20 items-start">
+            {/* LEFT — EXPLANATION */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:col-span-5 space-y-8"
+            >
+              <span className="block text-[11px] tracking-[0.4em] uppercase text-[#5f3b86]">
+                What We Do
+              </span>
 
-            return (
-              <motion.div
-                key={index}
-                whileHover={{ y: -6 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                className="relative rounded-3xl p-10 border border-black/5 bg-white shadow-[0_30px_80px_rgba(0,0,0,0.06)] overflow-hidden"
-              >
-                {/* Accent Glow */}
-                <div
-                  className="absolute -top-24 -right-24 h-64 w-64 rounded-full blur-3xl opacity-30"
-                  style={{ backgroundColor: item.accent }}
-                />
-
-                {/* Icon */}
-                <div
-                  className="flex h-12 w-12 items-center justify-center rounded-xl mb-8"
-                  style={{ backgroundColor: `${item.accent}22` }}
-                >
-                  <Icon size={22} style={{ color: item.accent }} />
-                </div>
-
-                {/* Text */}
-                <span className="block text-[11px] tracking-[0.35em] uppercase text-black/40 mb-3">
-                  {item.title}
+              <h2 className="text-4xl md:text-5xl font-light leading-tight text-black">
+                Workforce infrastructure
+                <span className="block text-[#5f3b86] font-normal">
+                  for Africa’s service economy
                 </span>
+              </h2>
 
-                <h3 className="text-xl font-medium text-black mb-4 leading-snug">
-                  {item.headline}
+              <p className="text-black/70 leading-relaxed text-lg max-w-md">
+                Optivance HR Africa is a blue-collar recruitment, training, and
+                workforce management company built for Africa’s fast-growing
+                service and industrial sectors.
+              </p>
+
+              <p className="text-black/60 leading-relaxed max-w-md">
+                We support businesses that need dependable workers — and workers
+                who want structured jobs, training, protection, and long-term
+                opportunity.
+              </p>
+            </motion.div>
+
+            {/* RIGHT — ROLES */}
+            <motion.div
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:col-span-7"
+            >
+              <div className="rounded-3xl border border-black/5 p-10 shadow-[0_30px_90px_rgba(0,0,0,0.06)]">
+                <h3 className="text-sm tracking-[0.3em] uppercase text-black/60 mb-8">
+                  Roles We Cover
                 </h3>
 
-                <p className="text-black/60 leading-relaxed mb-8">
-                  {item.description}
-                </p>
-
-                {/* CTA */}
-                <a
-                  href={item.href}
-                  className="inline-flex items-center gap-3 text-xs tracking-[0.25em] uppercase font-medium transition-all group"
-                  style={{ color: item.accent }}
-                >
-                  {item.cta}
-                  <ArrowRight
-                    size={16}
-                    className="transition-transform group-hover:translate-x-1"
-                  />
-                </a>
-              </motion.div>
-            );
-          })}
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <Role icon={<Hotel />} text="Bartenders & Waitstaff" />
+                  <Role icon={<Briefcase />} text="Hotel & Hospitality Staff" />
+                  <Role icon={<Brush />} text="Cleaners & Facility Staff" />
+                  <Role icon={<Wrench />} text="Electricians, Plumbers & Artisans" />
+                  <Role icon={<HardHat />} text="Construction Workers" />
+                  <Role icon={<Warehouse />} text="Warehouse & Logistics Staff" />
+                  <Role icon={<ShoppingBag />} text="Retail Assistants" />
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
+  );
+}
+
+/* -------------------------------------
+   ROLE ITEM
+------------------------------------- */
+function Role({
+  icon,
+  text,
+}: {
+  icon: React.ReactNode;
+  text: string;
+}) {
+  return (
+    <div className="flex items-center gap-4">
+      <div className="h-10 w-10 rounded-xl bg-[#5f3b86]/10 text-[#5f3b86] flex items-center justify-center">
+        {icon}
+      </div>
+      <span className="text-black/80 text-sm">{text}</span>
+    </div>
   );
 }

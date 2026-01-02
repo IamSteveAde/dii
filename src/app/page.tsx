@@ -3,62 +3,66 @@ import { Metadata } from "next";
 // Home sections
 import Hero from "./components/home/hero";
 import About from "./components/home/about";
-import DiscoverProperties from "./components/home/property-option"; // mentor section
+import DiscoverProperties from "./components/home/property-option"; // mentor / platform section
 import Listing from "./components/home/property-list";
 import Testimonials from "./components/home/testimonial";
-
+import History from "./components/home/history";
+import Calculator from "./components/home/calculator";
+import Info from "./components/home/info";
 
 // Global components
 import AudioWelcome from "./components/AudioWelcome";
 
+/* -------------------------------------
+   METADATA — OPTIVANCE HR AFRICA
+------------------------------------- */
 export const metadata: Metadata = {
-  metadataBase: new URL("https://digitalinclusioninitiative.org"),
+  metadataBase: new URL("https://optivancehr.africa"),
 
   title: {
-    default: "Digital Inclusion Initiative",
-    template: "%s | Digital Inclusion Initiative",
+    default: "Optivance HR Africa",
+    template: "%s | Optivance HR Africa",
   },
 
   description:
-    "Digital Inclusion Initiative works to expand digital access, build skills, and create economic opportunities for women and underserved communities through technology.",
+    "Optivance HR Africa is an AI-powered workforce platform helping businesses hire, train, certify, and manage blue-collar workers — all through WhatsApp.",
 
   keywords: [
-    "digital inclusion",
-    "digital access",
-    "technology for social impact",
-    "women in technology",
-    "digital skills training",
-    "underserved communities",
-    "tech education Africa",
-    "digital divide",
-    "Digital Inclusion Initiative",
+    "Optivance HR Africa",
+    "blue collar recruitment Africa",
+    "workforce management Africa",
+    "HR platform Africa",
+    "WhatsApp HR platform",
+    "blue collar jobs Africa",
+    "AI workforce platform",
+    "staff recruitment and payroll",
+    "worker training and certification",
+    "HR compliance Africa",
   ],
 
   openGraph: {
-    title: "Digital Inclusion Initiative",
+    title: "Optivance HR Africa",
     description:
-      "Expanding digital access, building skills, and creating opportunities for women and underserved communities.",
-    url: "https://digitalinclusioninitiative.org",
-    siteName: "Digital Inclusion Initiative",
+      "Hire, train, certify, and manage trusted blue-collar workers — powered by AI and delivered through WhatsApp.",
+    url: "https://optivancehr.africa",
+    siteName: "Optivance HR Africa",
     type: "website",
     images: [
       {
-        url: "https://digitalinclusioninitiative.org/og/og-cover.jpg",
+        url: "https://optivancehr.africa/og/og-cover.jpg",
         width: 1200,
         height: 630,
-        alt: "Digital Inclusion Initiative — Bridging the Digital Divide",
+        alt: "Optivance HR Africa — AI-Powered Workforce Platform",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Digital Inclusion Initiative",
+    title: "Optivance HR Africa",
     description:
-      "Bridging the digital divide through access, skills, and opportunity.",
-    images: [
-      "https://digitalinclusioninitiative.org/og/og-cover.jpg",
-    ],
+      "The AI-powered workforce platform for hiring and managing blue-collar workers across Africa.",
+    images: ["https://optivancehr.africa/og/og-cover.jpg"],
   },
 
   robots: {
@@ -67,28 +71,36 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://digitalinclusioninitiative.org",
+    canonical: "https://optivancehr.africa",
   },
 };
 
+/* -------------------------------------
+   HOME PAGE
+------------------------------------- */
 export default function Home() {
   return (
     <main>
-      {/* Audio welcome — plays once per visit */}
+      {/* Audio welcome — brief, professional, plays once per visit */}
       <AudioWelcome />
 
-      {/* Core sections */}
+      {/* Core hero & positioning */}
       <Hero />
       <About />
 
-      {/* Mentor / Opportunity / Engagement section */}
+      {/* Platform / WhatsApp / AI section */}
       <DiscoverProperties />
 
-      {/* Impact, listings, or programs */}
+      {/* Workforce scope / industries / roles */}
       <Listing />
 
-      {/* Social proof */}
+      {/* Trust & social proof */}
       <Testimonials />
+
+      {/* Company journey, capability & infrastructure */}
+      <History />
+      <Calculator />
+      <Info />
     </main>
   );
 }

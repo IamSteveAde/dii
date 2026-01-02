@@ -1,98 +1,123 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Handshake } from "lucide-react";
+import {
+  ShieldCheck,
+  Rocket,
+  Wallet,
+  Users,
+  TrendingUp,
+  BadgeCheck,
+  Briefcase,
+  GraduationCap,
+  HeartHandshake,
+} from "lucide-react";
 
-export default function PartnerSection() {
+export default function ForEmployersAndWorkers() {
   return (
-    <section className="relative bg-white overflow-hidden">
-      {/* Subtle Particles */}
+    <section className="relative bg-white overflow-hidden" id="hire">
+      {/* ORBIT BACKGROUND */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-32 h-2 w-2 rounded-full bg-[#5f3b86]/20 animate-float-slow" />
-        <div className="absolute top-1/3 right-40 h-3 w-3 rounded-full bg-[#61abbb]/20 animate-float-medium" />
-        <div className="absolute bottom-32 left-1/4 h-2 w-2 rounded-full bg-[#5f3b86]/15 animate-float-fast" />
-        <div className="absolute bottom-20 right-1/3 h-4 w-4 rounded-full bg-[#bcc8d7]/30 animate-float-slow" />
-        <div className="absolute top-1/2 left-1/2 h-2 w-2 rounded-full bg-black/10 animate-float-medium" />
+        <div className="absolute top-1/2 left-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-black/5" />
+        <div className="absolute top-1/2 left-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-black/5" />
+        <div className="absolute top-1/2 left-1/2 h-[340px] w-[340px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-black/5" />
       </div>
 
-      {/* Content */}
       <div className="relative z-10 py-32">
         <div className="container mx-auto px-6 lg:max-w-screen-xl">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-3xl"
-          >
-            {/* Eyebrow */}
-            <div className="flex items-center gap-3 text-black/60 mb-6">
-              <Handshake size={18} />
-              <span className="text-[11px] tracking-[0.45em] uppercase">
-                Collaboration
+          <div className="grid lg:grid-cols-2 gap-16 items-stretch">
+            {/* ================= EMPLOYERS ================= */}
+            <motion.div
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="rounded-3xl border border-black/5 p-10 shadow-[0_30px_90px_rgba(0,0,0,0.06)]"
+            >
+              <span className="block text-[11px] tracking-[0.4em] uppercase text-[#5f3b86] mb-4">
+                For Employers
               </span>
-            </div>
 
-            {/* Headline */}
-            <h2 className="text-4xl md:text-5xl font-light leading-tight text-black">
-              Partner with Digital Inclusion Initiative
-            </h2>
+              <h3 className="text-3xl font-light text-black">
+                Hire Better. Faster. Safer.
+              </h3>
 
-            {/* Body */}
-            <p className="mt-6 text-black/60 max-w-2xl leading-relaxed text-lg">
-              We’re always looking for new partners to collaborate on projects
-              and events. If your organisation shares our values and mission,
-              let’s work together to create meaningful and lasting impact
-              through digital inclusion.
-            </p>
+              <p className="mt-4 text-black/70 leading-relaxed max-w-md">
+                Optivance removes the stress and risk of blue-collar hiring —
+                giving you a dependable, scalable workforce you can trust.
+              </p>
 
-            {/* CTA */}
-            <div className="mt-10">
-              <a
-                href="/partner"
-                className="inline-flex items-center gap-4 px-10 py-5 rounded-2xl text-xs tracking-[0.3em] uppercase font-medium transition-all group"
-                style={{
-                  backgroundColor: "#5f3b86",
-                  color: "#ffffff",
-                }}
-              >
-                Partner With Us
-                <ArrowRight
-                  size={16}
-                  className="transition-transform group-hover:translate-x-1"
-                />
-              </a>
-            </div>
-          </motion.div>
+              <ul className="mt-8 space-y-4">
+                <Item icon={<ShieldCheck />} text="Pre-screened, verified workers" />
+                <Item icon={<BadgeCheck />} text="Role-specific training and certification" />
+                <Item icon={<Rocket />} text="Faster deployment and replacements" />
+                <Item icon={<Wallet />} text="Payroll, tax, and compliance handled" />
+                <Item icon={<Users />} text="Reduced theft, absenteeism, and turnover" />
+                <Item icon={<TrendingUp />} text="Scalable workforce on demand" />
+              </ul>
+
+              <p className="mt-8 text-black/60 italic max-w-md">
+                We act as your trusted workforce partner — not just a recruiter.
+              </p>
+            </motion.div>
+
+            {/* ================= WORKERS ================= */}
+            <motion.div
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="rounded-3xl border border-black/5 p-10 shadow-[0_30px_90px_rgba(0,0,0,0.06)]"
+            >
+              <span className="block text-[11px] tracking-[0.4em] uppercase text-[#61abbb] mb-4">
+                For Workers
+              </span>
+
+              <h3 className="text-3xl font-light text-black">
+                More Than a Job. A Career Path.
+              </h3>
+
+              <p className="mt-4 text-black/70 leading-relaxed max-w-md">
+                Optivance helps workers move from informal jobs to structured,
+                protected employment with dignity and growth.
+              </p>
+
+              <ul className="mt-8 space-y-4">
+                <Item icon={<Briefcase />} text="Job matching based on skills" />
+                <Item icon={<GraduationCap />} text="Free or subsidized training" />
+                <Item icon={<BadgeCheck />} text="Digital certifications employers trust" />
+                <Item icon={<Wallet />} text="Stable income and payroll transparency" />
+                <Item icon={<ShieldCheck />} text="Tax and insurance coverage" />
+                <Item icon={<TrendingUp />} text="Opportunities to grow and earn more" />
+              </ul>
+
+              <p className="mt-8 text-black/60 italic max-w-md">
+                All through WhatsApp, in simple, familiar language.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </div>
-
-      {/* GLOBAL PARTICLE ANIMATIONS */}
-      <style jsx global>{`
-        @keyframes float {
-          0% {
-            transform: translateY(0) translateX(0);
-          }
-          50% {
-            transform: translateY(-20px) translateX(10px);
-          }
-          100% {
-            transform: translateY(0) translateX(0);
-          }
-        }
-
-        .animate-float-slow {
-          animation: float 14s ease-in-out infinite;
-        }
-
-        .animate-float-medium {
-          animation: float 10s ease-in-out infinite;
-        }
-
-        .animate-float-fast {
-          animation: float 7s ease-in-out infinite;
-        }
-      `}</style>
     </section>
+  );
+}
+
+/* -------------------------------------
+   LIST ITEM
+------------------------------------- */
+function Item({
+  icon,
+  text,
+}: {
+  icon: React.ReactNode;
+  text: string;
+}) {
+  return (
+    <li className="flex items-start gap-4">
+      <div className="h-10 w-10 rounded-xl bg-black/5 text-black flex items-center justify-center">
+        {icon}
+      </div>
+      <span className="text-black/80 text-sm leading-relaxed">{text}</span>
+    </li>
   );
 }

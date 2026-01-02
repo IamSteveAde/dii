@@ -10,97 +10,75 @@ export default function Footer() {
 
       <div className="relative z-10 container mx-auto px-6 lg:max-w-screen-xl">
         <div className="grid lg:grid-cols-12 gap-16 items-start">
-          {/* LEFT — IDENTITY */}
+          {/* ================= BRAND ================= */}
           <div className="lg:col-span-4 space-y-6">
             <span
               className="block text-sm tracking-[0.35em] uppercase text-white font-light"
               style={{ textShadow: "0 4px 20px rgba(0,0,0,0.35)" }}
             >
-              Digital Inclusion Initiative
+              Optivance HR Africa
             </span>
 
             <p className="text-white/60 text-sm leading-relaxed max-w-sm">
-              Digital Inclusion Initiative works to expand digital access, build
-              practical skills, and create meaningful opportunities for women
-              and underserved communities through technology.
+              Optivance HR Africa is an AI-powered workforce platform helping
+              businesses hire, train, certify, and manage blue-collar workers —
+              all through WhatsApp.
             </p>
           </div>
 
-          {/* CENTER — NAVIGATION */}
+          {/* ================= PLATFORM ================= */}
           <div className="lg:col-span-4 space-y-6">
             <span className="block text-[11px] tracking-[0.3em] uppercase text-white/40">
-              Get Involved
+              Platform
             </span>
 
             <ul className="space-y-3 text-sm">
               <li>
-                <Link
-                  href="/about"
-                  className="text-white/70 hover:text-white transition"
-                >
-                  About Us
+                <Link href="#about" className="text-white/70 hover:text-white transition">
+                  About Optivance
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/donate"
-                  className="text-white/70 hover:text-white transition"
-                >
-                  Donate
+                <Link href="#why" className="text-white/70 hover:text-white transition">
+                  Why Optivance
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/volunteer"
-                  className="text-white/70 hover:text-white transition"
-                >
-                  Volunteer
+                <Link href="#industries" className="text-white/70 hover:text-white transition">
+                  Industries
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/mentor"
-                  className="text-white/70 hover:text-white transition"
-                >
-                  Become a Mentor
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/partner"
-                  className="text-white/70 hover:text-white transition"
-                >
-                  Partner With Us
-                </Link>
-              </li>
+              
             </ul>
           </div>
 
-          {/* RIGHT — CONTACT & TRUST */}
+          {/* ================= TRUST & CONTACT ================= */}
           <div className="lg:col-span-4 space-y-6">
             <span className="block text-[11px] tracking-[0.3em] uppercase text-white/40">
-              Connect
+              Trust & Support
             </span>
 
             <p className="text-white/70 text-sm leading-relaxed max-w-sm">
-              We collaborate with individuals, organisations, and institutions
-              committed to closing the digital divide and enabling inclusive
-              participation in the digital economy.
+              Built for compliance, reliability, and long-term workforce
+              development. We work with employers, workers, and partners across
+              Africa to build a safer, more dignified labour economy.
             </p>
 
-            <Link
-              href="/contact"
-              className="inline-block text-[11px] tracking-[0.3em] uppercase text-white/80 border-b border-white/30 pb-1 hover:text-white hover:border-white transition"
-            >
-              Contact Us
-            </Link>
+            <div className="space-y-3 text-sm">
+              <Link
+                href="#contact"
+                className="block text-white/70 hover:text-white transition"
+              >
+                Contact Us
+              </Link>
+              
+            </div>
           </div>
         </div>
 
-        {/* BOTTOM LINE */}
+        {/* ================= BOTTOM LINE ================= */}
         <div className="mt-20 text-center text-white/40 text-xs tracking-wide">
-          © {new Date().getFullYear()} Digital Inclusion Initiative. All rights
-          reserved.
+          © {new Date().getFullYear()} Optivance HR Africa. All rights reserved.
         </div>
       </div>
     </footer>

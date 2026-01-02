@@ -1,9 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+
+/* -------------------------------------
+   BRAND COLORS
+------------------------------------- */
+const BRAND = {
+  purple: "#5f3b86",
+  teal: "#61abbb",
+};
 
 export default function Header() {
   const [onDark, setOnDark] = useState(false);
@@ -52,27 +59,28 @@ export default function Header() {
       >
         <div className="container mx-auto px-6 lg:max-w-screen-xl">
           <div className="flex items-center justify-between h-20">
-            {/* LOGO */}
+            {/* LOGO — TEXT */}
             <Link href="/" className="z-50 flex items-center">
-              <Image
-                src="/images/logo/dlogo.svg"
-                alt="Digital Inclusion Initiative"
-                width={120}
-                height={32}
-                className={`transition-opacity ${
-                  onDark ? "invert brightness-200" : ""
-                }`}
-                priority
-              />
+              <span
+                className="text-sm tracking-[0.25em] uppercase font-light"
+                style={{
+                  textShadow: onDark
+                    ? "0 4px 20px rgba(0,0,0,0.45)"
+                    : "0 4px 20px rgba(0,0,0,0.25)",
+                }}
+              >
+                <span style={{ color: BRAND.purple }}>Optivance</span>{" "}
+                <span style={{ color: BRAND.teal }}>HR Africa</span>
+              </span>
             </Link>
 
             {/* DESKTOP NAV */}
             <nav className="hidden md:flex items-center gap-10">
-              <NavItem onDark={onDark} href="/about">About</NavItem>
-              <NavItem onDark={onDark} href="/donate">Donate</NavItem>
-              <NavItem onDark={onDark} href="/volunteer">Volunteer</NavItem>
-              <NavItem onDark={onDark} href="/mentor">Mentor</NavItem>
-              <NavItem onDark={onDark} href="/partner">Partner</NavItem>
+              <NavItem onDark={onDark} href="#about">About</NavItem>
+              
+              <NavItem onDark={onDark} href="#why">Why Optivance</NavItem>
+              <NavItem onDark={onDark} href="#industries">Industries</NavItem>
+              <NavItem onDark={onDark} href="#contact">Get Started</NavItem>
             </nav>
 
             {/* MOBILE TOGGLE BUTTON */}
@@ -102,31 +110,31 @@ export default function Header() {
         <div className="fixed inset-0 z-40 bg-black/90 backdrop-blur-2xl">
           <nav className="h-full flex flex-col items-center justify-center">
             <MobileNavItem delay={0} href="/about" onClick={() => setMenuOpen(false)}>
-              About Us
+              About Optivance
             </MobileNavItem>
 
             <Divider />
 
-            <MobileNavItem delay={1} href="/donate" onClick={() => setMenuOpen(false)}>
-              Donate
+            <MobileNavItem delay={1} href="/hire" onClick={() => setMenuOpen(false)}>
+              Hire Workers
             </MobileNavItem>
 
             <Divider />
 
-            <MobileNavItem delay={2} href="/volunteer" onClick={() => setMenuOpen(false)}>
-              Volunteer
+            <MobileNavItem delay={2} href="/workers" onClick={() => setMenuOpen(false)}>
+              For Workers
             </MobileNavItem>
 
             <Divider />
 
-            <MobileNavItem delay={3} href="/mentor" onClick={() => setMenuOpen(false)}>
-              Become a Mentor
+            <MobileNavItem delay={3} href="/industries" onClick={() => setMenuOpen(false)}>
+              Industries
             </MobileNavItem>
 
             <Divider />
 
-            <MobileNavItem delay={4} href="/partner" onClick={() => setMenuOpen(false)}>
-              Partner With Us
+            <MobileNavItem delay={4} href="/contact" onClick={() => setMenuOpen(false)}>
+              Contact
             </MobileNavItem>
           </nav>
         </div>

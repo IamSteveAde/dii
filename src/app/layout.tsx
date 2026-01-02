@@ -11,7 +11,7 @@ import Header from "./components/layout/header";
 import Footer from "./components/layout/footer";
 import ScrollToTop from "./components/scroll-to-top";
 import Aoscompo from "@/utils/aos";
-import ChatWidget from "./components/ChatbotEmbed";
+
 
 /* -------------------------------------
    FONT
@@ -57,7 +57,7 @@ export default function RootLayout({
             
 
             {/* Global Chat Widget */}
-            <ChatWidget />
+            
           </ThemeProvider>
         </AppContextProvider>
       </body>

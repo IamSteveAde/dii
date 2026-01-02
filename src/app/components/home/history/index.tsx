@@ -1,84 +1,127 @@
 "use client";
 
-export default function Testimonials() {
-  const testimonials = [
-    {
-      text: "I bought my travel insurance in less than 5 minutes.",
-      name: "Chinedu A.",
-      initials: "CA",
-    },
-    {
-      text: "Customer service is so fast. Filing a claim was easy.",
-      name: "Fatima O.",
-      initials: "FO",
-    },
-    {
-      text: "Chuks AI is the smartest insurance assistant I’ve used.",
-      name: "Tunde M.",
-      initials: "TM",
-    },
-  ];
+import { motion } from "framer-motion";
+import {
+  Globe,
+  Smartphone,
+  Cpu,
+  BarChart3,
+  HeartHandshake,
+  ShieldCheck,
+} from "lucide-react";
 
+export default function WhyOptivance() {
   return (
-    <section className="relative py-24 bg-[#f8fafc] overflow-hidden" id="testimonials">
+    <section className="relative overflow-hidden" id="why">
+      {/* PURPLE GRADIENT BACKGROUND */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(135deg, #2a123f 0%, #5f3b86 45%, #7b4db3 100%)",
+        }}
+      />
 
-      {/* Subtle circular rings pattern */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.15]">
-        <svg
-          viewBox="0 0 800 800"
-          className="w-[900px] h-[900px]"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle cx="400" cy="400" r="120" stroke="#94a3b8" strokeWidth="1" fill="none" />
-          <circle cx="400" cy="400" r="200" stroke="#94a3b8" strokeWidth="1" fill="none" />
-          <circle cx="400" cy="400" r="300" stroke="#cbd5e1" strokeWidth="1" fill="none" />
-          <circle cx="400" cy="400" r="380" stroke="#e2e8f0" strokeWidth="1" fill="none" />
-        </svg>
+      {/* SOFT FLOW LINES */}
+      <div className="absolute inset-0 pointer-events-none opacity-30">
+        <div className="absolute top-0 left-1/3 h-full w-[1px] bg-gradient-to-b from-transparent via-white to-transparent" />
+        <div className="absolute top-0 left-2/3 h-full w-[1px] bg-gradient-to-b from-transparent via-white to-transparent" />
       </div>
 
-      <div className="relative z-10 container mx-auto lg:max-w-screen-xl px-6">
+      <div className="relative z-10 py-32">
+        <div className="container mx-auto px-6 lg:max-w-screen-xl">
+          {/* SECTION HEADER */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="max-w-2xl mb-20 text-white"
+          >
+            <span className="block text-[11px] tracking-[0.4em] uppercase text-white/70 mb-4">
+              Why Optivance
+            </span>
 
-        {/* Section Heading */}
-        <div className="max-w-xl mb-14">
-          <p className="text-sm uppercase tracking-[0.2em] text-primary mb-3">
-            Testimonials
-          </p>
+            <h2 className="text-4xl md:text-5xl font-light leading-tight">
+              Built with context.
+              <span className="block font-normal">
+                Powered with intelligence.
+              </span>
+            </h2>
+          </motion.div>
 
-          <h2 className="text-3xl md:text-4xl font-bold text-midnight_text">
-            Loved by thousands of users.
-          </h2>
+          {/* THREE PILLARS */}
+          <div className="grid lg:grid-cols-3 gap-10">
+            {/* BUILT FOR AFRICA */}
+            <Pillar
+              icon={<Globe />}
+              title="Built for Africa"
+              points={[
+                "WhatsApp-first access",
+                "Simple, mobile-friendly experience",
+                "Scales across cities and countries",
+              ]}
+            />
+
+            {/* POWERED BY TECHNOLOGY */}
+            <Pillar
+              icon={<Cpu />}
+              title="Powered by Technology"
+              points={[
+                "AI-driven screening and matching",
+                "Data-backed performance insights",
+                "Continuous skill improvement",
+              ]}
+            />
+
+            {/* HUMAN AT THE CORE */}
+            <Pillar
+              icon={<HeartHandshake />}
+              title="Human at the Core"
+              points={[
+                "Worker dignity and protection",
+                "Employer trust and reliability",
+                "Long-term workforce development",
+              ]}
+            />
+          </div>
         </div>
-
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {testimonials.map((item, index) => (
-            <div
-              key={index}
-              className="group relative rounded-2xl p-6 border border-gray-200 bg-white 
-                         shadow-[0_8px_20px_rgba(0,0,0,0.05)]
-                         transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_14px_30px_rgba(0,0,0,0.1)]"
-            >
-              {/* Initials */}
-              <div className="h-14 w-14 rounded-xl bg-primary/10 border border-primary/20
-                              flex items-center justify-center text-primary text-xl font-bold mb-5">
-                {item.initials}
-              </div>
-
-              {/* Text */}
-              <p className="text-base text-gray-700 mb-4 leading-relaxed">
-                “{item.text}”
-              </p>
-
-              {/* Name */}
-              <p className="text-sm text-gray-500 font-medium">— {item.name}</p>
-
-              {/* Accent underline */}
-              <div className="mt-5 h-[2px] w-12 rounded-full bg-primary/50 group-hover:w-20 transition-all duration-300" />
-            </div>
-          ))}
-        </div>
-
       </div>
     </section>
+  );
+}
+
+/* -------------------------------------
+   PILLAR CARD
+------------------------------------- */
+function Pillar({
+  icon,
+  title,
+  points,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  points: string[];
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      className="rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 p-10 text-white"
+    >
+      <div className="h-11 w-11 rounded-xl bg-white/15 flex items-center justify-center mb-6">
+        {icon}
+      </div>
+
+      <h3 className="text-xl font-medium mb-6">{title}</h3>
+
+      <ul className="space-y-3 text-sm text-white/85">
+        {points.map((point) => (
+          <li key={point}>• {point}</li>
+        ))}
+      </ul>
+    </motion.div>
   );
 }

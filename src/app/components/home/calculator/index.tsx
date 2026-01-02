@@ -1,124 +1,109 @@
 "use client";
 
+import { motion } from "framer-motion";
 import {
-  HeartPulse,
-  CarFront,
-  Plane,
-  HeartHandshake,
-  Smartphone,
-  BriefcaseBusiness,
+  Hotel,
+  Utensils,
+  HardHat,
+  Factory,
+  ShoppingCart,
+  Truck,
+  Globe2,
 } from "lucide-react";
 
-export default function InsuranceServices() {
-  const services = [
-    {
-      title: "Health Insurance",
-      desc: "Affordable, flexible health coverage for individuals and families.",
-      icon: HeartPulse,
-    },
-    {
-      title: "Auto Insurance",
-      desc: "Protect your vehicle with comprehensive or third-party plans.",
-      icon: CarFront,
-    },
-    {
-      title: "Travel Insurance",
-      desc: "Get international or local travel protection within minutes.",
-      icon: Plane,
-    },
-    {
-      title: "Life Insurance",
-      desc: "Secure your loved ones with trusted long-term protection.",
-      icon: HeartHandshake,
-    },
-    {
-      title: "Device / Phone Insurance",
-      desc: "Instant cover for screen damage, liquid damage, theft & more.",
-      icon: Smartphone,
-    },
-    {
-      title: "SME Business Insurance",
-      desc: "Strong protection for small and growing businesses.",
-      icon: BriefcaseBusiness,
-    },
-  ];
-
+export default function IndustriesAndVision() {
   return (
-    <section
-      className="relative py-24 overflow-hidden bg-[#0b0e1a] dark:bg-[#050816]"
-      id="services"
-    >
-      {/* Soft Glow Blobs */}
-      <div className="pointer-events-none absolute -top-40 -right-32 h-96 w-96 rounded-full bg-primary/20 blur-[120px]" />
-      <div className="pointer-events-none absolute bottom-[-150px] -left-10 h-80 w-80 rounded-full bg-sky-400/20 blur-[120px]" />
+    <section className="relative bg-white overflow-hidden" id="industries">
+      <div className="relative z-10 py-32">
+        <div className="container mx-auto px-6 lg:max-w-screen-xl">
+          <div className="grid lg:grid-cols-12 gap-20 items-start">
+            {/* ================= INDUSTRIES ================= */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:col-span-6"
+            >
+              <span className="block text-[11px] tracking-[0.4em] uppercase text-[#5f3b86] mb-6">
+                Industries We Serve
+              </span>
 
-      <div className="relative z-10 container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4">
-        {/* Section Header */}
-        <div className="max-w-2xl mb-14">
-          <p className="text-sm uppercase tracking-[0.2em] text-primary/80 mb-3">
-            Insurance Services
-          </p>
+              <h2 className="text-4xl font-light leading-tight text-black mb-10">
+                Supporting Africa’s
+                <span className="block font-normal text-[#5f3b86]">
+                  essential industries
+                </span>
+              </h2>
 
-          <h2
-            className="text-3xl md:text-4xl font-bold text-white mb-4"
-            data-aos="fade-left"
-          >
-            Everything you need to protect what matters most.
-          </h2>
+              <div className="grid sm:grid-cols-2 gap-6">
+                <Industry icon={<Hotel />} label="Hospitality & Tourism" />
+                <Industry icon={<Utensils />} label="Food & Beverage" />
+                <Industry icon={<HardHat />} label="Construction & Real Estate" />
+                <Industry icon={<Factory />} label="Manufacturing" />
+                <Industry icon={<ShoppingCart />} label="Retail & Supermarkets" />
+                <Industry icon={<Truck />} label="Logistics & Warehousing" />
+              </div>
+            </motion.div>
 
-          <p className="text-base md:text-lg text-slate-300">
-            Choose the coverage you want and let Chuks AI handle everything —
-            instantly through WhatsApp.
-          </p>
-        </div>
+            {/* ================= VISION ================= */}
+            <motion.div
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:col-span-6"
+            >
+              <span className="block text-[11px] tracking-[0.4em] uppercase text-black/50 mb-6">
+                Our Vision
+              </span>
 
-        {/* Service Cards Grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, i) => {
-            const Icon = service.icon;
-
-            return (
-              <div
-                key={service.title}
-                className="group relative flex flex-col rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg
-                           shadow-[0_18px_45px_rgba(0,0,0,0.25)]
-                           transition duration-300
-                           hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(0,0,0,0.35)] hover:border-primary/40"
-                data-aos="fade-up"
-                data-aos-delay={100 * (i + 1)}
-              >
-                {/* Icon */}
-                <div className="mb-4 inline-flex items-center justify-center rounded-xl border border-primary/20 bg-primary/10 p-3 
-                               group-hover:bg-primary/20 group-hover:border-primary/40 transition">
-                  <Icon className="h-7 w-7 text-primary" />
+              <div className="rounded-3xl border border-black/5 p-10 shadow-[0_30px_90px_rgba(0,0,0,0.06)]">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="h-11 w-11 rounded-xl bg-[#5f3b86]/10 text-[#5f3b86] flex items-center justify-center">
+                    <Globe2 />
+                  </div>
+                  <h3 className="text-2xl font-light text-black">
+                    Building Africa’s workforce infrastructure
+                  </h3>
                 </div>
 
-                {/* Title */}
-                <h3 className="text-xl font-semibold text-white mb-1">
-                  {service.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-sm text-slate-300 mb-4 leading-relaxed">
-                  {service.desc}
+                <p className="text-black/70 leading-relaxed text-lg mb-6">
+                  To become Africa’s most trusted blue-collar workforce
+                  platform, connecting millions of workers to dignified jobs
+                  while helping businesses grow with confidence.
                 </p>
 
-                {/* WhatsApp CTA (Now a Link) */}
-                <a
-                  href="https://api.whatsapp.com/send?phone=2348107942363"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-auto inline-flex items-center justify-center px-5 py-2 rounded-xl 
-                                   bg-primary text-white text-sm font-medium 
-                                   hover:bg-primary/90 transition-all"
-                >
-                  Start on WhatsApp
-                </a>
+                <p className="text-black/60 leading-relaxed">
+                  Optivance HR Africa is building the long-term infrastructure
+                  for Africa’s workforce economy — responsibly, inclusively,
+                  and at scale.
+                </p>
               </div>
-            );
-          })}
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
+  );
+}
+
+/* -------------------------------------
+   INDUSTRY ITEM
+------------------------------------- */
+function Industry({
+  icon,
+  label,
+}: {
+  icon: React.ReactNode;
+  label: string;
+}) {
+  return (
+    <div className="flex items-center gap-4">
+      <div className="h-10 w-10 rounded-xl bg-black/5 text-black flex items-center justify-center">
+        {icon}
+      </div>
+      <span className="text-black/80 text-sm">{label}</span>
+    </div>
   );
 }
